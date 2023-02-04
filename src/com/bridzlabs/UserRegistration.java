@@ -37,7 +37,7 @@ public class UserRegistration {
     }
 
     public String passwordCheck(String password){
-        String regex = "^[(A-Z){1,}a-z(0-9){*}]{8,}$";
+        String regex = "^/(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(password);
         if(matcher.matches()){
@@ -48,7 +48,6 @@ public class UserRegistration {
     }
 
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
         System.out.println("WELCOME TO USER REGISTRATION PROGRAM USING REGEX");
         Scanner scan = new Scanner(System.in);
         UserRegistration obj = new UserRegistration();
@@ -77,7 +76,7 @@ public class UserRegistration {
         System.out.println("Mobile Number is:- "+number);
 
         String password;
-        System.out.println("Enter password with having minimum 8 character, Atleast 1 Uppercase letter");
+        System.out.println("Enter password with having minimum 8 character, Atleast 1 Uppercase letter, Atleast 1 Number");
         password = scan.next();
         String pass = obj.passwordCheck(password);
         System.out.println("Password is :- "+pass);
