@@ -2,7 +2,6 @@ package com.bridzlabs;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
 public class UserRegistration {
 
     public String FirstName(String name) {
@@ -22,10 +21,16 @@ public class UserRegistration {
         Scanner scan = new Scanner(System.in);
         UserRegistration obj = new UserRegistration();
 
-        String name;
+        String firstName;
         System.out.println("Enter the first name, Start with capital letter and has min 3 letter :-");
-        name = scan.next();
-        String res = obj.FirstName(name);
-        System.out.println(res);
+        firstName = scan.next();
+        String firstname = obj.FirstName(firstName);
+        System.out.println("First Name is:- " + firstname);
+
+        String lastName;
+        System.out.println("Enter the last name, Start with capital letter and has min 3 letter :-");
+        lastName = scan.next();
+        String lastname = obj.FirstName(lastName);
+        System.out.println("Last Name is:- " + lastName);
     }
 }
